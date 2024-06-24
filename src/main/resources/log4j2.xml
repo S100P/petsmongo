@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+<!--    задаем апендер (инструмент) Console для вывода в консоль (таргет System.out)-->
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+<!--            задаем шаблон вывода лога-->
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+<!--        задаем уровень логирования для конкретного узла. флаг additivity="false" необходим, чтобы логи не дублировались (см https://mkyong.com/logging/logback-duplicate-log-messages/)-->
+        <Logger name="ru.s100p.petsmongo" level="debug" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+<!--        задаем общий уровень логирования во всем приложении-->
+        <Root level="WARN">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>

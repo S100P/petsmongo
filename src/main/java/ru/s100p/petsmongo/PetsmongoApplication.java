@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 //TODO выделить логику в сервис
+//TODO добавить Exception Handlers
+//TODO переделать
 
 @EnableFeignClients //С помощью этой аннотации мы включаем сканирование компонентов для интерфейсов, которые заявляют, что они являются клиентами Feign (см https://for-each.dev/lessons/b/-spring-cloud-openfeign)
 @SpringBootApplication
