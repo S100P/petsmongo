@@ -1,0 +1,87 @@
+<mxfile host="app.diagrams.net" modified="2024-06-22T14:47:08.320Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="sASBX6OspS_vdPZ4NTcV" version="24.6.2" type="github">
+  <diagram name="Страница — 1" id="48z96JZ2Nk2S-4M4ds--">
+    <mxGraphModel dx="1903" dy="736" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="AGKuizLikppnEioVuAVD-7" value="&lt;div&gt;БД - питомник с безхозными животными&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="390" y="172" width="80" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="AGKuizLikppnEioVuAVD-8" value="&lt;div&gt;БД хозяев и купленных имим петов&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="162" width="80" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="AGKuizLikppnEioVuAVD-10" value="Сценарий работы:&lt;div&gt;&lt;ol&gt;&lt;li&gt;Создается овнер в Спрингпетс.&lt;/li&gt;&lt;li&gt;Создается запрос на пета с определенными данными (категория, статус, возраст и т.д. во временном репо)&lt;/li&gt;&lt;li&gt;Сполученными в запросе петом Спрингпетс обращается в Петсмонго.&lt;/li&gt;&lt;li&gt;Получив пета в запросе, Петсмонго проверяет наличие петов в питомнике, выбирает такого по фильтру и отправляет Спрингпетс.&lt;/li&gt;&lt;li&gt;Спрингпетс привязывает полученного в ответе пета к текущему овнеру.&lt;/li&gt;&lt;li&gt;Удаляется запрос из временного репо.&amp;nbsp;&lt;/li&gt;&lt;/ol&gt;&lt;div&gt;Кафка:&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;может хранить как запросы от Спрингпетс в адрес Петсмонго на поиск нужного пета,&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;так и запросы на предоставление актуального списка всех петов.&amp;nbsp;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="312" width="460" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="AGKuizLikppnEioVuAVD-13" value="springpets service" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="62" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="AGKuizLikppnEioVuAVD-14" value="petsmongo service" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="72" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="AGKuizLikppnEioVuAVD-15" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="AGKuizLikppnEioVuAVD-13" target="AGKuizLikppnEioVuAVD-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="232" as="sourcePoint" />
+            <mxPoint x="230" y="222" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AGKuizLikppnEioVuAVD-16" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="AGKuizLikppnEioVuAVD-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="430" y="132" as="sourcePoint" />
+            <mxPoint x="480" y="82" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AGKuizLikppnEioVuAVD-17" value="кафка" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="210" y="60" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="AGKuizLikppnEioVuAVD-18" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" target="AGKuizLikppnEioVuAVD-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="92" as="sourcePoint" />
+            <mxPoint x="190" y="42" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AGKuizLikppnEioVuAVD-25" value="запрос" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="AGKuizLikppnEioVuAVD-18">
+          <mxGeometry x="-0.0337" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AGKuizLikppnEioVuAVD-19" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1" source="AGKuizLikppnEioVuAVD-17" target="AGKuizLikppnEioVuAVD-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="92" as="sourcePoint" />
+            <mxPoint x="340" y="42" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AGKuizLikppnEioVuAVD-26" value="запрос" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="AGKuizLikppnEioVuAVD-19">
+          <mxGeometry x="-0.1942" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AGKuizLikppnEioVuAVD-20" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="AGKuizLikppnEioVuAVD-14" target="AGKuizLikppnEioVuAVD-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="172" as="sourcePoint" />
+            <mxPoint x="340" y="122" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AGKuizLikppnEioVuAVD-23" value="ответ" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="AGKuizLikppnEioVuAVD-20">
+          <mxGeometry x="-0.0723" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AGKuizLikppnEioVuAVD-21" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" source="AGKuizLikppnEioVuAVD-17" target="AGKuizLikppnEioVuAVD-13">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="170" y="182" as="sourcePoint" />
+            <mxPoint x="220" y="132" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AGKuizLikppnEioVuAVD-24" value="ответ" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="AGKuizLikppnEioVuAVD-21">
+          <mxGeometry x="0.2265" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AGKuizLikppnEioVuAVD-22" value="Функционал Petsmongo:&lt;div&gt;&lt;ul&gt;&lt;li&gt;базовый CRUD&lt;/li&gt;&lt;li&gt;фильтрация и выдача по фильтру с несколькими параметрами&lt;/li&gt;&lt;li&gt;поиск и выдача по образцу json-а&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="510" y="72" width="270" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

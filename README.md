@@ -1,0 +1,1 @@
+ЧТОБЫ ПОМЕНЯТЬ ПОРТ ЗАПУСКА: You can go to edit configuration, and add VM option where you can specify your port AND for eg: -Dserver.port=8001
