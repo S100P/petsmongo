@@ -11,7 +11,6 @@ import ru.s100p.petsmongo.model.PetModel;
 import ru.s100p.petsmongo.service.PetService;
 
 import java.util.List;
-import java.util.Optional;
 
 @Slf4j
 @RestController
@@ -22,16 +21,28 @@ public class PetController {
 
     PetService service;
 
-
-    @GetMapping
-    public List<PetModel> findAll() {
-        log.debug("Got GET request for /pets");
-        return service.findAll();
-    }
-
+    //для примера работы OpenFeign, по изначальной задумке не требуется.
     @GetMapping("/add-pets-in-repo")
     public List<PetModel> addPetsInRepo() {
        return service.addPetsInRepo(); //сохраняем в репозиторий данные, которые приходит от feignclient, который в свою очередь забирает их у стороннего сервиса - springpets
+    }
+
+    @GetMapping("/getPetsByCategory")
+    public List<PetModel> getPetsByCategory(@RequestParam String category){
+       return service.findPetsByCategory(category);
+    }
+
+
+    @GetMapping("/getPetsByFilter")
+    public List<PetModel> getPetsByFilter(@RequestParam String category, @RequestParam String status, @RequestParam Long placeInTop){
+        return service.getFilteredPets(category, status, placeInTop);
+    }
+
+
+    @GetMapping
+    public List<PetModel> findAllPets() {
+        log.debug("Got GET request for /pets");
+        return service.findAll();
     }
 
     @PostMapping("/savePet")
